@@ -69,9 +69,11 @@
                 <div class="top-right links">
                     @auth
                         <a href="{{ url('/admin') }}">Home</a>
+                        <a href="{{ route('categories-index') }}">Post Categories</a>
                         <a href="{{ route('posts-index') }}">Posts</a>
 
                     @else
+                        <a href="{{ route('categories-index') }}">Post Categories</a>
                         <a href="{{ route('posts-index') }}">Posts</a>
                         <a href="{{ route('login') }}">Login</a>
 

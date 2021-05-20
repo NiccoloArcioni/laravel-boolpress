@@ -31,6 +31,7 @@ class PostSeeder extends Seeder
             }
             $new_post->slug = $slug;
             $new_post->user_id = $faker-> numberBetween(1, App\User::count());
+            $new_post->category_id = $faker->numberBetween(1, App\Category::count());
             $new_post->save();
         }
     }

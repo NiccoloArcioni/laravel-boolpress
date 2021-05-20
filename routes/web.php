@@ -16,6 +16,12 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/','HomeController@index')->name('guest-homepage');
 
+Route::prefix('categories')
+    ->group(function () {
+        Route::get('/', 'CategoryController@index')->name('categories-index');
+        Route::get('/{slug}', 'CategoryController@show')->name('categories-show');
+    });
+
 Route::prefix('posts')
     ->group(function () {
         Route::get('/', 'PostController@index')->name('posts-index');
