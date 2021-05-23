@@ -35,4 +35,13 @@ Route::prefix('admin')
     ->middleware('auth')
     ->group(function () {
         Route::get('/', 'HomeController@index')->name('admin-homepage');
+        Route::resource('/posts', PostController::Class)->names([
+            'index' => 'admin.posts.index',
+            'create' => 'admin.posts.create',
+            'show' => 'admin.posts.show',
+            'destroy' => 'admin.posts.destroy',
+            'update' => 'admin.posts.update',
+            'edit' => 'admin.posts.edit',
+            'store' => 'admin.posts.store',
+        ]);
     });
