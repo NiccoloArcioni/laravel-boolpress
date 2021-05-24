@@ -18,8 +18,8 @@ class CategoryController extends Controller
         return view('guest.categories.index', $data);
     }
 
-    public function show($slug)
+    public function show($id)
     {
-        
+
     }
 }

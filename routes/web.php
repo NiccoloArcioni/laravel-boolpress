@@ -35,6 +35,8 @@ Route::prefix('admin')
     ->middleware('auth')
     ->group(function () {
         Route::get('/', 'HomeController@index')->name('admin-homepage');
+        Route::get('/profile', 'HomeController@profile')->name('admin-profile');
+        Route::post('/profile/generate-token', 'HomeController@generateToken')->name('admin.generate-token');
         Route::resource('/posts', PostController::Class)->names([
             'index' => 'admin.posts.index',
             'create' => 'admin.posts.create',
